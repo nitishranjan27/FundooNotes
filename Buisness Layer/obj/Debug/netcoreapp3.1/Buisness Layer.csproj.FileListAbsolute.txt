@@ -1,0 +1,30 @@
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.deps.json
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.pdb
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Repository Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Repository Layer.pdb
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.AssemblyReference.cache
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.AssemblyInfoInputs.cache
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.AssemblyInfo.cs
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.CoreCompileInputs.cache
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.CopyComplete
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.deps.json
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Buisness Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Repository Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Repository Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\bin\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.AssemblyReference.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.AssemblyInfoInputs.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.AssemblyInfo.cs
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.CoreCompileInputs.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.csproj.CopyComplete
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Buisness Layer\obj\Debug\netcoreapp3.1\Buisness Layer.pdb

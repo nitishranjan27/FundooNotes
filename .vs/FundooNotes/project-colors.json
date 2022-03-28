@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "80112170-29df-4bdd-a1be-0fe87710a478": {
+      "ProjectGuid": "80112170-29df-4bdd-a1be-0fe87710a478",
+      "DisplayName": "FundooNotes",
+      "ColorIndex": 0
+    },
+    "5e8f648b-f402-4aa7-98c0-8392734921ef": {
+      "ProjectGuid": "5e8f648b-f402-4aa7-98c0-8392734921ef",
+      "DisplayName": "Common Layer",
+      "ColorIndex": 1
+    },
+    "f848e4fb-24c7-42d5-8fad-9b6252327d51": {
+      "ProjectGuid": "f848e4fb-24c7-42d5-8fad-9b6252327d51",
+      "DisplayName": "Buisness Layer",
+      "ColorIndex": 2
+    },
+    "e773d12c-39b0-4bb0-8060-bc85afd78154": {
+      "ProjectGuid": "e773d12c-39b0-4bb0-8060-bc85afd78154",
+      "DisplayName": "Repository Layer",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
