@@ -1,0 +1,20 @@
+C:\Users\prati\source\repos\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.deps.json
+C:\Users\prati\source\repos\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.csproj.AssemblyReference.cache
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.AssemblyInfoInputs.cache
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.AssemblyInfo.cs
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.csproj.CoreCompileInputs.cache
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\prati\source\repos\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.deps.json
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\bin\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.csproj.AssemblyReference.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.AssemblyInfoInputs.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.AssemblyInfo.cs
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.csproj.CoreCompileInputs.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\Common Layer\obj\Debug\netcoreapp3.1\Common Layer.pdb
