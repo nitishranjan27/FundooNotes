@@ -35,5 +35,23 @@ namespace FundooNotes.Controllers
                 throw;
             }
         }
+        [HttpPost("Login")]
+        public IActionResult LoginUser(UserLoginModel userLogin)
+        {
+            try
+            {
+                var result = userBL.Login(userLogin);
+                if (result != null)
+                {
+                    return this.Ok(new { success = true, message = "Login Successfully", data = result });
+                }
+                else
+                    return this.BadRequest(new { success = false, message = "Login Unsuccessful" });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

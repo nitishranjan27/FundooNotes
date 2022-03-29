@@ -90,3 +90,8 @@ C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\Fun
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.pdb
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.genruntimeconfig.cache
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.MvcApplicationPartsAssemblyInfo.cs
