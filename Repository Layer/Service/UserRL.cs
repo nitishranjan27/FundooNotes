@@ -114,5 +114,46 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+        public string ForgetPassword(string email)
+        {
+            try
+            {
+                var existingLogin = this.fundooContext.UserTable.Where(X => X.Email == email).FirstOrDefault();
+                if (existingLogin != null)
+                {
+                    var token = GenerateSecurityToken(email, existingLogin.Id);
+                    new Msmq().SendMessage(token);
+                    return token;
+                }
+                else
+                    return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool ResetPassword(string email, string password, string confirmPassword)
+        {
+            try
+            {
+                if (password.Equals(confirmPassword))
+                {
+                    UserEntity user = fundooContext.UserTable.Where(e => e.Email == email).FirstOrDefault();
+                    user.Password = confirmPassword;
+                    fundooContext.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

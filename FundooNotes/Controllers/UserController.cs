@@ -1,8 +1,10 @@
 ﻿using Buisness_Layer.Interface;
 using Common_Layer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Claims;
 
 namespace FundooNotes.Controllers
 {
@@ -70,6 +72,43 @@ namespace FundooNotes.Controllers
             catch (Exception)
             {
                 throw;
+            }
+        }
+        [HttpPost("ForgotPassword")]
+        public IActionResult ForgotPassword(string email)
+        {
+            try
+            {
+                var result = userBL.ForgetPassword(email);
+                if (result != null)
+                {
+                    return this.Ok(new { isSuccess = true, message = "Forget Password link Send Successfully" });
+                }
+                else
+                    return this.BadRequest(new { isSuccess = false, message = "Forget Password link UnSuccessfully" });
+            }
+            catch (Exception e)
+            {
+
+                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
+            }
+        }
+        [Authorize]
+        [HttpPost("ResetPassword")]
+
+        public IActionResult ResetPassword(string password, string confirmPassword)
+        {
+            try
+            {
+                var email = User.FindFirst(ClaimTypes.Email).Value.ToString();
+                var result = userBL.ResetPassword(email, password, confirmPassword);
+                return this.Ok(new { isSuccess = true, message = "Password Reset Successfully" });
+
+            }
+            catch (Exception e)
+            {
+
+                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
             }
         }
     }

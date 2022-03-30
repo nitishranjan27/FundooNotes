@@ -15,6 +15,32 @@ namespace Buisness_Layer.Service
         {
             this.userRL = userRL;
         }
+
+        public string ForgetPassword(string email)
+        {
+            try
+            {
+                return userRL.ForgetPassword(email);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool ResetPassword(string email, string password, string confirmPassword)
+        {
+            try
+            {
+                return this.userRL.ResetPassword(email, password, confirmPassword);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public UserEntity Registration(UserReg userRegModel)
         {
             try
