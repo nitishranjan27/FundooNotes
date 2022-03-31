@@ -35,6 +35,11 @@ namespace FundooNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FundooContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:FundooDB"]));
+
+            services.AddTransient<IUserBL, UserBL>();
+            services.AddTransient<IUserRL, UserRL>();
+            services.AddTransient<INoteBL, NoteBL>();
+            services.AddTransient<INoteRL, NoteRL>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -71,7 +76,7 @@ namespace FundooNotes
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+            }) 
             .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -89,8 +94,6 @@ namespace FundooNotes
 
             });
 
-            services.AddTransient<IUserBL, UserBL>();
-            services.AddTransient<IUserRL, UserRL>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
