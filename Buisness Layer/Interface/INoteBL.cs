@@ -14,5 +14,7 @@ namespace Buisness_Layer.Interface
         public IEnumerable<NoteEntity> GetAllNotes(long userId);
         public List<NoteEntity> GetNote(int NotesId);
         public NoteEntity ArchiveNote(long NoteId, long userId);
+        public NoteEntity PinnedNote(long NoteId, long userId);
+        public NoteEntity TrashedNote(long NotesId, long userId);
     }
 }

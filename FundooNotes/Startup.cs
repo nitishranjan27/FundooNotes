@@ -85,7 +85,7 @@ namespace FundooNotes
 
                     ValidateAudience = false,
 
-                    ValidateLifetime = false,
+                    ValidateLifetime = true,
 
                     ValidateIssuerSigningKey = true,
 
@@ -100,7 +100,7 @@ namespace FundooNotes
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sneaker API V");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "FundooNotes API ");
                // c.RoutePrefix = String.Empty;
             });
             if (env.IsDevelopment())

@@ -78,6 +78,31 @@ namespace Buisness_Layer.Service
             }
         }
 
+        public NoteEntity PinnedNote(long NoteId, long userId)
+        {
+            try
+            {
+                return noteRL.PinnedNote(NoteId,userId);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public NoteEntity TrashedNote(long NotesId, long userId)
+        {
+            try
+            {
+                return noteRL.TrashedNote(NotesId,userId);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
+
         public NoteEntity UpdateNote(NoteModel noteUpdateModel, long NoteId)
         {
             try

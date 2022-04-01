@@ -25,7 +25,14 @@ namespace Repository_Layer.Service
                 var response = fundooContext.NotesTable.Where(A => A.NoteId == NoteId && A.Id == userId).FirstOrDefault();
                 if (response != null)
                 {
-                    response.IsArchived = true;
+                    if (response.IsArchived == false)
+                    {
+                        response.IsArchived = true;
+                    }
+                    else
+                    {
+                        response.IsArchived = false;
+                    }
                     fundooContext.SaveChanges();
                     return response;
                 }
@@ -129,20 +136,48 @@ namespace Repository_Layer.Service
             }
         }
 
-        public NoteEntity PinnedNote(long NoteId)
+        public NoteEntity PinnedNote(long NoteId, long userId)
         {
-            var pin = fundooContext.NotesTable.Where(p => p.NoteId == NoteId).FirstOrDefault();
-            if (pin.IsPinned == false)
+            var pin = fundooContext.NotesTable.Where(p => p.NoteId == NoteId && p.Id == userId).FirstOrDefault();
+            if (pin != null)
             {
-                pin.IsPinned = true;
+                if (pin.IsPinned == false)
+                {
+                    pin.IsPinned = true;
+                }
+                else
+                {
+                    pin.IsPinned = false;
+                }
                 fundooContext.SaveChanges();
                 return pin;
             }
             else
             {
-                pin.IsPinned = false;
+                return null;
+            }
+        }
+
+        public NoteEntity TrashedNote(long NotesId, long userId)
+        {
+            var trashed = fundooContext.NotesTable.Where(t => t.NoteId == NotesId && t.Id == userId).FirstOrDefault();
+            if (trashed != null)
+            {
+                if (trashed.IsDeleted == false)
+                {
+                    trashed.IsDeleted = true;
+                }
+                else
+                {
+                    trashed.IsDeleted = false;
+                }
                 fundooContext.SaveChanges();
-                return pin;
+                return trashed;
+
+            }
+            else
+            {
+                return null;
             }
         }
 
