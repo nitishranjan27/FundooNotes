@@ -1,4 +1,7 @@
-﻿using Common_Layer.Models;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Common_Layer.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Repository_Layer.Context;
 using Repository_Layer.Entity;
@@ -13,9 +16,11 @@ namespace Repository_Layer.Service
     public class NoteRL : INoteRL
     {
         public readonly FundooContext fundooContext;
-        public NoteRL(FundooContext fundooContext)
+        public readonly IConfiguration appsettings;
+        public NoteRL(FundooContext fundooContext, IConfiguration Appsettings)
         {
             this.fundooContext = fundooContext;
+            this.appsettings = Appsettings;
         }
 
         public NoteEntity ArchiveNote(long NoteId, long userId)
@@ -136,6 +141,29 @@ namespace Repository_Layer.Service
             }
         }
 
+        public NoteEntity NoteColor(long NoteId, string addcolor)
+        {
+            var note = fundooContext.NotesTable.Where(c => c.NoteId == NoteId).FirstOrDefault();
+            if (note != null)
+            {
+                if (addcolor != null)
+                {
+                    note.Color = addcolor;
+                    fundooContext.NotesTable.Update(note);
+                    fundooContext.SaveChanges();
+                    return note;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public NoteEntity PinnedNote(long NoteId, long userId)
         {
             var pin = fundooContext.NotesTable.Where(p => p.NoteId == NoteId && p.Id == userId).FirstOrDefault();
@@ -207,5 +235,73 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
-    }    
+
+        public NoteEntity UploadImage(IFormFile imageURL, long noteid)
+        {
+            try
+            {
+                if (noteid > 0)
+                {
+                    var note = fundooContext.NotesTable.Where(i => i.NoteId == noteid).FirstOrDefault();
+                    if (note != null)
+                    {
+                        Account acc = new Account(
+                            appsettings["Cloudinary:cloud_name"],
+                            appsettings["Cloudinary:api_key"],
+                            appsettings["Cloudinary:api_secret"]
+                            );
+                        Cloudinary Cld = new Cloudinary(acc);
+                        var path = imageURL.OpenReadStream();
+                        ImageUploadParams upLoadParams = new ImageUploadParams()
+                        {
+                            File = new FileDescription(imageURL.FileName, path)
+                        };
+                        var UploadResult = Cld.Upload(upLoadParams);
+                        note.BGImage = UploadResult.Url.ToString();
+                        note.ModifiedAt = DateTime.Now;
+                        fundooContext.SaveChanges();
+                        return note;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public NoteEntity DeleteImage(long noteid, long userId)
+        {
+            try
+            {
+                if (noteid > 0)
+                {
+                    var note = fundooContext.NotesTable.Where(x => x.NoteId == noteid).FirstOrDefault();
+                    if (note != null)
+                    {
+                        note.BGImage = "";
+                        note.ModifiedAt = DateTime.Now;
+                        fundooContext.SaveChanges();
+                        return note;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
 }

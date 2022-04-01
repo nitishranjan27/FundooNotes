@@ -1,5 +1,6 @@
 ﻿using Buisness_Layer.Interface;
 using Common_Layer.Models;
+using Microsoft.AspNetCore.Http;
 using Repository_Layer.Entity;
 using Repository_Layer.Interface;
 using System;
@@ -35,6 +36,18 @@ namespace Buisness_Layer.Service
                 return noteRL.CreateNote(noteModel, userId);
             }
             catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public NoteEntity DeleteImage(long noteid, long userId)
+        {
+            try
+            {
+                return noteRL.DeleteImage(noteid,userId);
+            }
+            catch(Exception)
             {
                 throw;
             }
@@ -78,6 +91,18 @@ namespace Buisness_Layer.Service
             }
         }
 
+        public NoteEntity NoteColor(long NoteId, string addcolor)
+        {
+            try
+            {
+                return noteRL.NoteColor(NoteId,addcolor);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
+
         public NoteEntity PinnedNote(long NoteId, long userId)
         {
             try
@@ -110,6 +135,18 @@ namespace Buisness_Layer.Service
                 return noteRL.UpdateNote(noteUpdateModel, NoteId);
             }
             catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public NoteEntity UploadImage(IFormFile imageURL, long noteid)
+        {
+            try
+            {
+                return noteRL.UploadImage(imageURL, noteid);
+            }
+            catch(Exception) 
             {
                 throw;
             }

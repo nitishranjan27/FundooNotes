@@ -190,6 +190,72 @@ namespace FundooNotes.Controllers
             {
                 return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
             }
-        }          
+        }
+
+        [HttpPut("Color")]
+        public IActionResult NoteColor(long NoteId, string addcolor)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var color = notesBL.NoteColor(NoteId, addcolor);
+                if (color != null)
+                {
+                    return this.Ok(new { Success = true, message = "Color Added Successfully", data = color });
+                }
+                else
+                    return this.BadRequest(new { Success = false, message = " UnSuccessfully to Add Color" });
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
+            }
+        }
+
+        [HttpPut("UploadImage")]
+        public IActionResult UploadImage(IFormFile imageURL, long noteid)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var result = notesBL.UploadImage(imageURL, noteid);
+                if (result != null)
+                {
+                    return this.Ok(new { Success = true, message = "Image is Added Successfully", data = result });
+                }
+                else
+                    return this.BadRequest(new { Success = false, message = " Sorry! Image is Not Added" });
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
+            }
+        }
+
+        [HttpDelete("DeleteImage")]
+        public IActionResult DeleteImage(long noteid)
+        {
+            try
+            {
+                long userid = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "Id").Value);
+                var delete = notesBL.DeleteImage(userid, noteid);
+                if (noteid == 0)
+                {
+                    return this.BadRequest(new { Success = false, Message = "NoteID Not Excepted" });
+                }
+                if (delete != null)
+                {
+                    return this.Ok(new { Success = true, message = "Image Deleted Successfully" ,data = delete });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Image Not Deleted" });
+                }
+            }
+            catch(Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
+            }
+        }
     }
 }
