@@ -20,24 +20,28 @@ namespace Repository_Layer.Migrations
 
             modelBuilder.Entity("Repository_Layer.Entity.UserEntity", b =>
                 {
-                    b.Property<long>("EmployeeId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EmployeeId");
+                    b.HasKey("Id");
 
                     b.ToTable("UserTable");
                 });

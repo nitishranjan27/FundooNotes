@@ -2,7 +2,7 @@
 
 namespace Repository_Layer.Migrations
 {
-    public partial class FisrtMigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,16 +10,16 @@ namespace Repository_Layer.Migrations
                 name: "UserTable",
                 columns: table => new
                 {
-                    EmployeeId = table.Column<long>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true)
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserTable", x => x.EmployeeId);
+                    table.PrimaryKey("PK_UserTable", x => x.Id);
                 });
         }
 

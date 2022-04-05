@@ -26,17 +26,31 @@ namespace Buisness_Layer.Service
                 throw ex;
             }
         }
-        string IUserBL.Login(UserLoginModel userLogin)
+
+        public LoginResponse UserLogin(UserLoginModel userLog)
         {
             try
             {
-                return userRL.Login(userLogin);
+                return this.userRL.UserLogin(userLog);
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
+
+        //string IUserBL.Login(UserLoginModel userLogin)
+        //{
+        //    try
+        //    {
+        //        return userRL.Login(userLogin);
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
     }
 }
