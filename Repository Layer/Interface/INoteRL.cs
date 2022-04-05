@@ -20,5 +20,6 @@ namespace Repository_Layer.Interface
         public NoteEntity NoteColor(long NoteId, string addcolor);
         public NoteEntity UploadImage(IFormFile imageURL, long noteid);
         public NoteEntity DeleteImage(long noteid, long userId);
+        
     }
 }
