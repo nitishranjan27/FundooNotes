@@ -73,11 +73,11 @@ namespace Repository_Layer.Service
                 {
                     LoginResponse login = new LoginResponse();
                     string token = GenerateSecurityToken(existLogin.Email, existLogin.Id);
-                    login.Id = existLogin.Id;
-                    login.FirstName = existLogin.FirstName;
-                    login.LastName = existLogin.LastName;
+                    //login.Id = existLogin.Id;
+                    //login.FirstName = existLogin.FirstName;
+                    //login.LastName = existLogin.LastName;
                     login.Email = existLogin.Email;
-                    login.Password = existLogin.Password;
+                    //login.Password = existLogin.Password;
                     login.Token = token;
 
                     return login;

@@ -33,7 +33,7 @@ namespace Common_Layer.Models
             string token = message.Body.ToString();
             MailMessage mailMessage = new MailMessage();
             mailMessage.Subject = "Fundoo Notes Reset Link";
-            mailMessage.Body = token;
+            mailMessage.Body = "Copy the token Below to reset your password :  \n\n" + token;
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
