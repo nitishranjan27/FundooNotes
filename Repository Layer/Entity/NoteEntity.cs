@@ -24,9 +24,9 @@ namespace Repository_Layer.Entity
         public string BGImage { get; set; }
 
         //foreign Key
-        [ForeignKey("User")]
+        [ForeignKey("Note")]
         public long Id { get; set; }
         [JsonIgnore]
-        public virtual UserEntity User { get; set; }
+        public virtual UserEntity Note { get; set; }
     }
 }
