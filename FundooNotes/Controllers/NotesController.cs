@@ -107,7 +107,7 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
-        [HttpGet("Get/{notesId}")]
+        [HttpGet("Get/{NotesId}")]
         public IActionResult GetNote(int NotesId)
         {
             try
@@ -212,8 +212,8 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpPut("UpdateImage/{noteId}")]
-        public IActionResult UploadImage(IFormFile imageURL, long noteid)
+        [HttpPut("UpdateImage")]
+        public IActionResult UploadImage(long noteid,IFormFile imageURL)
         {
             try
             {
@@ -232,7 +232,8 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpDelete("DeleteImage/{noteId}")]
+
+        [HttpDelete("DeleteImage")]
         public IActionResult DeleteImage(long noteid)
         {
             try
