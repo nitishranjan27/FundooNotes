@@ -212,7 +212,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpPut("UpdateImage")]
+        [HttpPut("UpdateImage/{noteid}")]
         public IActionResult UploadImage(long noteid,IFormFile imageURL)
         {
             try
@@ -233,13 +233,13 @@ namespace FundooNotes.Controllers
         }
 
 
-        [HttpDelete("DeleteImage")]
+        [HttpDelete("DeleteImage/{noteid}")]
         public IActionResult DeleteImage(long noteid)
         {
             try
             {
-                long userid = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "Id").Value);
-                var delete = notesBL.DeleteImage(userid, noteid);
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "Id").Value);
+                var delete = notesBL.DeleteImage(noteid, userId);
                 if (noteid == 0)
                 {
                     return this.BadRequest(new { Success = false, Message = "NoteID Not Excepted" });

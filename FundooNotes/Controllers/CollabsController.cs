@@ -48,6 +48,26 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
-
+        [HttpDelete("Remove")]
+        public IActionResult RemoveCollabs(long collabID)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var delete = collabBL.RemoveCollabs(collabID, userId);
+                if (delete != null)
+                {
+                    return this.Ok(new { Success = true, message = "Collaboration Removed Successfully", data = delete });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Collaboration  Unsuccessfully Removed" });
+                }
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
+            }
+        }
     }
 }
