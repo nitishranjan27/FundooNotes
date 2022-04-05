@@ -1,5 +1,6 @@
 ﻿using Buisness_Layer.Interface;
 using Common_Layer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository_Layer.Context;
@@ -10,6 +11,7 @@ namespace FundooNotes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CollabsController : ControllerBase
     {
         private readonly ICollabBL collabBL;
@@ -69,5 +71,28 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
+        [HttpGet("GetAllCollabs")]
+        public IActionResult GetAllCollabs(long noteId)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(e => e.Type == "Id").Value);
+                var notes = collabBL.GetAllCollabs(noteId,userId);
+                if (notes != null)
+                {
+                    return this.Ok(new { Success = true, message = " All Collaborations Found Successfully", data = notes });
+
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "No Collaborations  Found" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
+            }
+        }
+
     }
 }

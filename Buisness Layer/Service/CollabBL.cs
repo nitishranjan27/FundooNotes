@@ -1,5 +1,6 @@
 ﻿using Buisness_Layer.Interface;
 using Common_Layer.Models;
+using Repository_Layer.Entity;
 using Repository_Layer.Interface;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,19 @@ namespace Buisness_Layer.Service
             try
             {
                 return collabRL.AddCollab(collabModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public IEnumerable<CollabsEntity> GetAllCollabs(long noteId, long userId)
+        {
+            try
+            {
+                return collabRL.GetAllCollabs(noteId,userId);
             }
             catch (Exception)
             {
