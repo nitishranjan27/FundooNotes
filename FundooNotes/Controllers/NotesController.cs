@@ -21,7 +21,7 @@ namespace FundooNotes.Controllers
         {
             this.notesBL = notesBL;
         }
-        [HttpPost("CreateNotes")]
+        [HttpPost("Create")]
         public IActionResult CreateNote(NoteModel noteModel)
         {
             try
@@ -86,7 +86,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpGet("ShowAllNotes")]
+        [HttpGet("GetAll")]
         public IActionResult GetAllNotes(long userId)
         {
             try
@@ -107,7 +107,7 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
-        [HttpGet("ShowSpecificNote")]
+        [HttpGet("Get/{notesId}")]
         public IActionResult GetNote(int NotesId)
         {
             try
@@ -127,7 +127,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpPut("ArchiveNote")]
+        [HttpPut("IsArchive")]
         public IActionResult ArchiveNote(long NoteId)
         {
             try
@@ -149,7 +149,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpPut("PinnedNote")]
+        [HttpPut("IsPinned")]
         public IActionResult PinnedNote(long NoteId)
         {
             try
@@ -170,7 +170,7 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
             }
         }
-        [HttpPut("TrashedNote")]
+        [HttpPut("IsTrash")]
         public IActionResult TrashedNote(long NotesId)
         {
             try
@@ -212,7 +212,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpPut("UploadImage")]
+        [HttpPut("UpdateImage/{noteId}")]
         public IActionResult UploadImage(IFormFile imageURL, long noteid)
         {
             try
@@ -232,7 +232,7 @@ namespace FundooNotes.Controllers
             }
         }
 
-        [HttpDelete("DeleteImage")]
+        [HttpDelete("DeleteImage/{noteId}")]
         public IActionResult DeleteImage(long noteid)
         {
             try
