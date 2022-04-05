@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Repository_Layer.Context;
 using Repository_Layer.Interface;
 using Repository_Layer.Service;
@@ -34,39 +35,62 @@ namespace FundooNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FundooContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:FundooDB"]));
-            services.AddTransient<IUserBL, UserBL>();
-            services.AddTransient<IUserRL, UserRL>();
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Welcome to FundooNotes" });
 
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(s =>
-            {
-                s.TokenValidationParameters = new TokenValidationParameters
+                var securitySchema = new OpenApiSecurityScheme
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = false,
-                    ValidateIssuerSigningKey = true
-                    
+                    Description = "Using the Authorization header with the Bearer scheme.",
+
+                    Name = "Authorization",
+
+                    In = ParameterLocation.Header,
+
+                    Type = SecuritySchemeType.Http,
+
+                    Scheme = "bearer",
+
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+
+                        Id = "Bearer"
+                    }
                 };
-            });
-
-
-            services.AddSwaggerGen(s => 
-            {
-                s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                c.AddSecurityDefinition("Bearer", securitySchema);
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
-                    Version = "V1",
-                    Title = "Sneaker API",
-                    Description = "API for retriving sneakers"
+                    { securitySchema, new[] { "Bearer" } }
 
                 });
             });
+            //var jwtSection = Configuration.GetSection("Jwt:Key");
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+
+                    ValidateAudience = false,
+
+                    ValidateLifetime = false,
+
+                    ValidateIssuerSigningKey = true,
+
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecKey"])) //Configuration["JwtToken:SecretKey"]
+                };
+
+            });
+
+            services.AddTransient<IUserBL, UserBL>();
+            services.AddTransient<IUserRL, UserRL>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -74,7 +98,7 @@ namespace FundooNotes
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sneaker API V");
-                c.RoutePrefix = String.Empty;
+               // c.RoutePrefix = String.Empty;
             });
             if (env.IsDevelopment())
             {
@@ -84,6 +108,8 @@ namespace FundooNotes
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
