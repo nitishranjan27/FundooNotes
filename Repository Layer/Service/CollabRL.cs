@@ -49,7 +49,6 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
-
         public string RemoveCollabs(long collabID, long userId)
         {
             var collab = fundooContext.CollaboratorTable.Where(X => X.CollabsID == collabID).FirstOrDefault();
@@ -62,6 +61,19 @@ namespace Repository_Layer.Service
             else
             {
                 return null;
+            }
+        }
+
+        public IEnumerable<CollabsEntity> GetAllCollabs(long noteId, long userId)
+        {
+            try
+            {
+                var result = fundooContext.CollaboratorTable.ToList().Where(x => x.NoteId == noteId);
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
