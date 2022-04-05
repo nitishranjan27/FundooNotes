@@ -10,8 +10,8 @@ using Repository_Layer.Context;
 namespace Repository_Layer.Migrations
 {
     [DbContext(typeof(FundooContext))]
-    [Migration("20220331114311_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20220405081500_NoteTable")]
+    partial class NoteTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -98,7 +98,7 @@ namespace Repository_Layer.Migrations
 
             modelBuilder.Entity("Repository_Layer.Entity.NoteEntity", b =>
                 {
-                    b.HasOne("Repository_Layer.Entity.UserEntity", "User")
+                    b.HasOne("Repository_Layer.Entity.UserEntity", "Note")
                         .WithMany()
                         .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -42,7 +42,7 @@ namespace Repository_Layer.Service
                     return response;
                 }
                 else
-                {  
+                {
                     return null;
                 }
             }
@@ -52,7 +52,7 @@ namespace Repository_Layer.Service
             }
         }
 
-        public NoteEntity CreateNote(NoteModel noteModel,long userId)
+        public NoteEntity CreateNote(NoteModel noteModel, long userId)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace Repository_Layer.Service
                 }
 
             }
-            catch(Exception) 
+            catch (Exception)
             {
                 throw;
             }
@@ -135,7 +135,7 @@ namespace Repository_Layer.Service
                 }
                 return null;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -261,7 +261,7 @@ namespace Repository_Layer.Service
                         note.ModifiedAt = DateTime.Now;
                         fundooContext.SaveChanges();
                         return note;
-                    }   
+                    }
                     else
                     {
                         return null;
