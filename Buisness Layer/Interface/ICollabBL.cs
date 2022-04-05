@@ -8,5 +8,6 @@ namespace Buisness_Layer.Interface
     public interface ICollabBL
     {
         public bool AddCollab(CollabModel collabModel);
+        public string RemoveCollabs(long collabID, long userId);
     }
 }
