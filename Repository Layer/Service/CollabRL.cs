@@ -17,7 +17,7 @@ namespace Repository_Layer.Service
         {
             this.fundooContext = fundooContext;
         }
-        public bool AddCollab(CollabModel collabModel)
+        public CollabsEntity AddCollab(CollabModel collabModel)
         {
             try
             {
@@ -25,24 +25,22 @@ namespace Repository_Layer.Service
                 var userData = fundooContext.UserTable.Where(x => x.Email == collabModel.CollabEmail).FirstOrDefault();
                 if (noteData != null && userData != null)
                 {
-                    CollabsEntity collab = new CollabsEntity();
-                    collab.CollabsEmail = collabModel.CollabEmail;
-                    collab.NoteId = collabModel.NoteId;
-                    collab.Id = userData.Id;
-                    //Adding the data to database
-                    fundooContext.CollaboratorTable.Add(collab);
+                    CollabsEntity collabsEntity = new CollabsEntity()
+                    {
+                        CollabsEmail = collabModel.CollabEmail,
+                        NoteId = collabModel.NoteId,
+                        Id = userData.Id
+                    };
+                    fundooContext.CollaboratorTable.Add(collabsEntity);
+                    var result = fundooContext.SaveChanges();
+                    return collabsEntity;
                 }
 
-                //Save the changes in database
-                int result = fundooContext.SaveChanges();
-                if (result > 0)
-                {
-                    return true;
-                }
                 else
                 {
-                    return false;
+                    return null;
                 }
+            
             }
             catch(Exception)
             {
