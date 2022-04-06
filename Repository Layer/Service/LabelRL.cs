@@ -94,5 +94,26 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+        public LabelEntity DeleteLabel(long labelID, long userId)
+        {
+            try
+            {
+                var deleteLabel = fundooContext.LabelsTable.Where(X => X.LabelID == labelID).FirstOrDefault();
+                if (deleteLabel != null)
+                {
+                    fundooContext.LabelsTable.Remove(deleteLabel);
+                    fundooContext.SaveChanges();
+                    return deleteLabel;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
     }
 }
