@@ -8,7 +8,7 @@ namespace Repository_Layer.Interface
 {
     public interface ICollabRL
     {
-        public bool AddCollab(CollabModel collabModel);
+        public CollabsEntity AddCollab(CollabModel collabModel);
         public string RemoveCollabs(long collabID, long userId);
         public IEnumerable<CollabsEntity> GetAllCollabs(long noteId, long userId);
     }

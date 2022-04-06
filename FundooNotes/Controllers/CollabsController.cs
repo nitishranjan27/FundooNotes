@@ -31,7 +31,7 @@ namespace FundooNotes.Controllers
                 if (collab.Id == userId)
                 {
                     var result = collabBL.AddCollab(collabModel);
-                    if (result)
+                    if (result != null)
                     {
                         return this.Ok(new { Success = true, message = "Collaboration stablish successfully", data = result });
                     }
@@ -42,7 +42,7 @@ namespace FundooNotes.Controllers
                 }
                 else
                 {
-                    return this.BadRequest(new { Sucess = false, message = "Failed Collaboration" });
+                    return this.Unauthorized(new { Sucess = false, message = "Failed Collaboration" });
                 }
             }
             catch (Exception e)
@@ -71,7 +71,7 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
-        [HttpGet("GetAllCollabs")]
+        [HttpGet("GetAll")]
         public IActionResult GetAllCollabs(long noteId)
         {
             try

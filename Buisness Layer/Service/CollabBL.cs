@@ -15,7 +15,7 @@ namespace Buisness_Layer.Service
         {
             this.collabRL = collabRL;
         }
-        public bool AddCollab(CollabModel collabModel)
+        public CollabsEntity AddCollab(CollabModel collabModel)
         {
             try
             {
