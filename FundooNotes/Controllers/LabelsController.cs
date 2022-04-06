@@ -50,5 +50,26 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAllLabels(long userId)
+        {
+            try
+            {
+                var labels = labelBL.GetAllLabels(userId);
+                if (labels != null)
+                {
+                    return this.Ok(new { status = 200, isSuccess = true, Message = " All labels found Successfully", data = labels });
+                }
+                else
+                {
+                    return this.NotFound(new { isSuccess = false, Message = "No label found" });
+                }
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(new { Status = 401, isSuccess = false, Message = e.InnerException.Message });
+            }
+        }
     }
 }
