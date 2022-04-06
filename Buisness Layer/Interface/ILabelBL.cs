@@ -10,5 +10,7 @@ namespace Buisness_Layer.Interface
     {
         public LabelEntity AddLabel(LabelModel labelModel);
         public IEnumerable<LabelEntity> GetAllLabels(long userId);
+        public List<LabelEntity> Getlabel(long NotesId, long userId);
+        public LabelEntity UpdateLabel(LabelModel labelModel, long labelID);
     }
 }
