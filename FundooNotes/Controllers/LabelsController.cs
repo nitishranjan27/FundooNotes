@@ -59,17 +59,60 @@ namespace FundooNotes.Controllers
                 var labels = labelBL.GetAllLabels(userId);
                 if (labels != null)
                 {
-                    return this.Ok(new { status = 200, isSuccess = true, Message = " All labels found Successfully", data = labels });
+                    return this.Ok(new { Success = true, Message = " All labels found Successfully", data = labels });
                 }
                 else
                 {
-                    return this.NotFound(new { isSuccess = false, Message = "No label found" });
+                    return this.NotFound(new { Success = false, Message = "No label found" });
                 }
             }
             catch (Exception e)
             {
-                return this.BadRequest(new { Status = 401, isSuccess = false, Message = e.InnerException.Message });
+                return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
+
+        [HttpGet("Get/{NotesId}")]
+        public IActionResult Getlabel(long NotesId)
+        {
+            try
+            {
+                long userId = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var labels = labelBL.Getlabel(NotesId,userId);
+                if (labels != null)
+                {
+                    return this.Ok(new { Success = true, message = " Specific label found Successfully", data = labels });
+                }
+                else
+                    return this.NotFound(new { Success = false, message = "Specific label not Found" });
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
+            }
+        }
+
+        [HttpPut("Update")]
+        public IActionResult UpdateLabel(LabelModel labelModel, long labelID)
+        {
+            try
+            {
+                long userid = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var result = labelBL.UpdateLabel(labelModel, labelID);
+                if (result != null)
+                {
+                    return this.Ok(new { Success = true, message = "Label Updated Successfully", data = result });
+                }
+                else
+                {
+                    return this.NotFound(new { Success = false, message = "Label Not Updated" });
+                }
+            }
+            catch (Exception e)
+            {
+                return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
+            }
+        }
+
     }
 }

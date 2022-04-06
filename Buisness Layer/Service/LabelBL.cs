@@ -38,5 +38,30 @@ namespace Buisness_Layer.Service
                 throw;
             }
         }
+
+        public List<LabelEntity> Getlabel(long NotesId, long userId)
+        {
+            try
+            {
+                return labelRL.Getlabel(NotesId,userId);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public LabelEntity UpdateLabel(LabelModel labelModel, long labelID)
+        {
+            try
+            {
+                return labelRL.UpdateLabel(labelModel,labelID);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
