@@ -48,6 +48,14 @@ namespace FundooNotes
             services.AddTransient<ILabelBL, LabelBL>();
             services.AddTransient<ILabelRL, LabelRL>();
 
+            //// Redis
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
+
+            services.AddMemoryCache();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
