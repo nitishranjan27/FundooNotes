@@ -107,7 +107,7 @@ namespace FundooNotes.Controllers
                 await this.distributedCache.SetAsync(cacheKey, redisLabelsList, options);
             }
 
-            return this.Ok(labelsList);
+            return this.Ok(labelsList); 
         }
 
         [HttpGet("Get/{NotesId}")]
