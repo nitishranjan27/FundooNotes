@@ -30,7 +30,7 @@ namespace Repository_Layer.Service
                 newUser.FirstName = userRegModel.FirstName;
                 newUser.LastName = userRegModel.LastName;
                 newUser.Email = userRegModel.Email;
-                newUser.Password = userRegModel.Password;
+                newUser.Password = EncryptPassword(userRegModel.Password);
                 fundooContext.Add(newUser);
                 int result = fundooContext.SaveChanges();
                 if (result > 0)
@@ -45,6 +45,27 @@ namespace Repository_Layer.Service
 
                 throw;
             }
+        }
+
+        private string EncryptPassword(string password)
+        {
+            string enteredpassword = "";
+            byte[] hide = new byte[password.Length];
+            hide = Encoding.UTF8.GetBytes(password);
+            enteredpassword = Convert.ToBase64String(hide);
+            return enteredpassword;
+        }
+        private string DecryptPassword(string encryptpwd)
+        {
+            string decryptpwd = string.Empty;
+            UTF8Encoding encodepwd = new UTF8Encoding();
+            Decoder Decode = encodepwd.GetDecoder();
+            byte[] todecode_byte = Convert.FromBase64String(encryptpwd);
+            int charCount = Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+            char[] decoded_char = new char[charCount];
+            Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+            decryptpwd = new String(decoded_char);
+            return decryptpwd;
         }
         //public string Login(UserLoginModel userLogin)
         //{
@@ -68,16 +89,18 @@ namespace Repository_Layer.Service
         {
             try
             {
-                var existLogin = this.fundooContext.UserTable.Where(X => X.Email == userLog.Email && X.Password == userLog.Password).FirstOrDefault();
-                if (existLogin != null)
+                var existingLogin = fundooContext.UserTable.Where(X => X.Email == userLog.Email).FirstOrDefault();
+                string decryptPass = DecryptPassword(existingLogin.Password);
+                if (decryptPass == userLog.Password)
                 {
                     LoginResponse login = new LoginResponse();
-                    string token = GenerateSecurityToken(existLogin.Email, existLogin.Id);
-                    //login.Id = existLogin.Id;
-                    //login.FirstName = existLogin.FirstName;
-                    //login.LastName = existLogin.LastName;
-                    login.Email = existLogin.Email;
-                    //login.Password = existLogin.Password;
+                    string token = GenerateSecurityToken(existingLogin.Email, existingLogin.Id);
+                    //login.Id = existingLogin.Id;
+                    //login.FirstName = existingLogin.FirstName;
+                    //login.LastName = existingLogin.LastName;
+                    login.Email = existingLogin.Email;
+                    //login.Password = existingLogin.Password;
+                    //login.CreatedAt = existingLogin.CreatedAt;
                     login.Token = token;
 
                     return login;
@@ -141,7 +164,7 @@ namespace Repository_Layer.Service
                 if (password.Equals(confirmPassword))
                 {
                     UserEntity user = fundooContext.UserTable.Where(e => e.Email == email).FirstOrDefault();
-                    user.Password = confirmPassword;
+                    user.Password = EncryptPassword(confirmPassword);
                     fundooContext.SaveChanges();
                     return true;
                 }
