@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes", "FundooNotes\FundooNotes.csproj", "{80112170-29DF-4BDD-A1BE-0FE87710A478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooNotes", "FundooNotes\FundooNotes.csproj", "{80112170-29DF-4BDD-A1BE-0FE87710A478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common Layer", "Common Layer\Common Layer.csproj", "{5E8F648B-F402-4AA7-98C0-8392734921EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common Layer", "Common Layer\Common Layer.csproj", "{5E8F648B-F402-4AA7-98C0-8392734921EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buisness Layer", "Buisness Layer\Buisness Layer.csproj", "{F848E4FB-24C7-42D5-8FAD-9B6252327D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buisness Layer", "Buisness Layer\Buisness Layer.csproj", "{F848E4FB-24C7-42D5-8FAD-9B6252327D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository Layer", "Repository Layer\Repository Layer.csproj", "{E773D12C-39B0-4BB0-8060-BC85AFD78154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository Layer", "Repository Layer\Repository Layer.csproj", "{E773D12C-39B0-4BB0-8060-BC85AFD78154}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

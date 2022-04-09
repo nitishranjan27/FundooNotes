@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Repository_Layer.Context;
 using Repository_Layer.Entity;
@@ -24,14 +25,14 @@ namespace FundooNotes.Controllers
     {
         private readonly ICollabBL collabBL;
         private readonly FundooContext fundooContext;
-        private readonly IMemoryCache memoryCache;
         private readonly IDistributedCache distributedCache;
-        public CollabsController(ICollabBL collabBL, FundooContext fundooContext, IMemoryCache memoryCache, IDistributedCache distributedCache)
+        private readonly ILogger<UserController> _logger;
+        public CollabsController(ICollabBL collabBL, FundooContext fundooContext, IDistributedCache distributedCache, ILogger<UserController> logger)
         {
             this.collabBL = collabBL;
             this.fundooContext = fundooContext;
-            this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
+            this._logger = logger;
         }
         [HttpPost("Add")]
         public IActionResult AddCollab(CollabModel collabModel)
@@ -45,20 +46,24 @@ namespace FundooNotes.Controllers
                     var result = collabBL.AddCollab(collabModel);
                     if (result != null)
                     {
+                        _logger.LogInformation("Collaboration stablish successfully");
                         return this.Ok(new { Success = true, message = "Collaboration stablish successfully", data = result });
                     }
                     else
                     {
+                        _logger.LogError("Collaboration stablish is Failed");
                         return this.BadRequest(new { Sucess = false, message = "Collaboration stablish is Failed" });
                     }
                 }
                 else
                 {
+                    _logger.LogError("Failed Collaboration");
                     return this.Unauthorized(new { Sucess = false, message = "Failed Collaboration" });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
@@ -71,15 +76,18 @@ namespace FundooNotes.Controllers
                 var delete = collabBL.RemoveCollabs(collabID, userId);
                 if (delete != null)
                 {
+                    _logger.LogInformation("Collaboration Removed Successfully");
                     return this.Ok(new { Success = true, message = "Collaboration Removed Successfully", data = delete });
                 }
                 else
                 {
+                    _logger.LogError("Collaboration  Unsuccessfully Removed");
                     return this.BadRequest(new { Success = false, message = "Collaboration  Unsuccessfully Removed" });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
@@ -92,16 +100,19 @@ namespace FundooNotes.Controllers
                 var notes = collabBL.GetAllCollabs(noteId,userId);
                 if (notes != null)
                 {
+                    _logger.LogInformation(" All Collaborations Found Successfully");
                     return this.Ok(new { Success = true, message = " All Collaborations Found Successfully", data = notes });
 
                 }
                 else
                 {
+                    _logger.LogError("No Collaborations  Found");
                     return this.BadRequest(new { Success = false, message = "No Collaborations  Found" });
                 }
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.ToString());
                 return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
             }
         }

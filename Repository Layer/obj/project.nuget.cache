@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HXDoNNMzcGEFawQGIabmd7cozMrl9Jrs033uuMZSwRtl58VQNo71C1iZ8J3x1vJszjWnVaNGqorviECO5Y70OQ==",
+  "dgSpecHash": "OjOlkmVVfWkKtB6ije1DNr32roXAbr3L9MmVzxDqSXNDjd/mlRKnOdtzhJXisvysl4CpUWNcYQ58EEs/G8VH0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\NITISH KUMAR\\source\\FundooNotes\\Repository Layer\\Repository Layer.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,9 @@
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

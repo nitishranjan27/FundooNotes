@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Repository_Layer.Context;
 using Repository_Layer.Entity;
@@ -24,15 +25,15 @@ namespace FundooNotes.Controllers
     {
         private readonly ILabelBL labelBL;
         private readonly FundooContext fundooContext;
-        private readonly IMemoryCache memoryCache;
         private readonly IDistributedCache distributedCache;
+        private readonly ILogger<UserController> _logger;
 
-        public LabelsController(ILabelBL labelBL, FundooContext fundooContext, IMemoryCache memoryCache, IDistributedCache distributedCache)
+        public LabelsController(ILabelBL labelBL, FundooContext fundooContext, IDistributedCache distributedCache, ILogger<UserController> logger)
         {
             this.labelBL = labelBL;
             this.fundooContext = fundooContext;
-            this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
+            this._logger = logger;
         }
 
         [HttpPost("Create")]
@@ -48,17 +49,24 @@ namespace FundooNotes.Controllers
                     var result = labelBL.AddLabel(labelModel);
                     if (result != null)
                     {
+                        _logger.LogInformation("Label created successfully");
                         return this.Ok(new { Success = true, Message = "Label created successfully", data = result });
                     }
                     else
                     {
+                        _logger.LogError("Label not created");
                         return this.BadRequest(new { Success = false, Message = "Label not created" });
                     }
                 }
-                return this.Unauthorized(new { Success = false, Message = "Unauthorized User!" });
+                else
+                {
+                    _logger.LogError("Unauthorized User!");
+                    return this.Unauthorized(new { Success = false, Message = "Unauthorized User!" });
+                }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
@@ -71,15 +79,18 @@ namespace FundooNotes.Controllers
                 var labels = labelBL.GetAllLabels(userId);
                 if (labels != null)
                 {
+                    _logger.LogInformation(" All labels Showing Successfully");
                     return this.Ok(new { Success = true, Message = " All labels found Successfully", data = labels });
                 }
                 else
                 {
+                    _logger.LogError("No label found");
                     return this.NotFound(new { Success = false, Message = "No label found" });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
@@ -119,13 +130,18 @@ namespace FundooNotes.Controllers
                 var labels = labelBL.Getlabel(NotesId,userId);
                 if (labels != null)
                 {
+                    _logger.LogInformation(" Specific label found Successfully");
                     return this.Ok(new { Success = true, message = " Specific label found Successfully", data = labels });
                 }
                 else
+                {
+                    _logger.LogError("No label found");
                     return this.NotFound(new { Success = false, message = "Specific label not Found" });
+                }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
@@ -139,15 +155,18 @@ namespace FundooNotes.Controllers
                 var result = labelBL.UpdateLabel(labelModel, labelID);
                 if (result != null)
                 {
+                    _logger.LogInformation("Label Updated Successfully");
                     return this.Ok(new { Success = true, message = "Label Updated Successfully", data = result });
                 }
                 else
                 {
+                    _logger.LogError("Label Not Updated");
                     return this.NotFound(new { Success = false, message = "Label Not Updated" });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
@@ -161,15 +180,18 @@ namespace FundooNotes.Controllers
                 var delete = labelBL.DeleteLabel(labelID, userId);
                 if (delete != null)
                 {
+                    _logger.LogInformation("Label Deleted Successfully");
                     return this.Ok(new { Success = true, message = "Label Deleted Successfully" });
                 }
                 else
                 {
+                    _logger.LogError("Label Not Deleted");
                     return this.NotFound(new { Success = false, message = "Label not Deleted" });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.ToString());
                 return this.BadRequest(new { Success = false, Message = e.InnerException.Message });
             }
         }
