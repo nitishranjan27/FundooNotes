@@ -3,6 +3,7 @@ using Common_Layer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Security.Claims;
 
@@ -13,9 +14,11 @@ namespace FundooNotes.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserBL userBL;
-        public UserController(IUserBL userBL)
+        private readonly ILogger<UserController> _logger;
+        public UserController(IUserBL userBL, ILogger<UserController> logger)
         {
             this.userBL = userBL;
+            this._logger = logger;
         }
         [HttpPost("Register")]
         public IActionResult Post(UserReg userReg)
@@ -25,16 +28,19 @@ namespace FundooNotes.Controllers
                 var res = userBL.Registration(userReg);
                 if(res != null)
                 {
+                    _logger.LogInformation("Register successfull");
                     return Ok(new { success = true, message = "Data Successful Uploaded" ,data=res});
                 }
                 else
                 {
+                    _logger.LogError("Register unsuccessfull");
                     return BadRequest(new { success = false, message = "Data Not Successful Uploaded", data = res });
                 }
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                throw;
+                _logger.LogError(e.ToString());
+                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
             }
         }
         //[HttpPost("Login")]
@@ -64,14 +70,17 @@ namespace FundooNotes.Controllers
                 var result = userBL.UserLogin(userLog);
                 if (result != null)
                 {
-                    return this.Ok(new { success = true, message = "Login Successfully", data = result });
+                    _logger.LogInformation("login successfull");
+                    return this.Ok(new { Success = true, message = "Login Successfully", data = result });
                 }
                 else
-                    return this.BadRequest(new { success = false, message = "Login Unsuccessful" });
+                    _logger.LogError("login unsuccessfull");
+                    return this.BadRequest(new { Success = false, message = "Login Unsuccessful" });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                _logger.LogError(ex.ToString());
+                return this.BadRequest(new { Success = false, Message = ex.Message });
             }
         }
         [HttpPost("ForgotPassword")]
@@ -82,15 +91,17 @@ namespace FundooNotes.Controllers
                 var result = userBL.ForgetPassword(email);
                 if (result != null)
                 {
-                    return this.Ok(new { isSuccess = true, message = "Forget Password link Send Successfully" });
+                    _logger.LogInformation("forget successfull");
+                    return this.Ok(new { Success = true, message = "Forget Password link Send Successfully" });
                 }
                 else
-                    return this.BadRequest(new { isSuccess = false, message = "Forget Password link UnSuccessfully" });
+                    _logger.LogError("forget successfull");
+                    return this.BadRequest(new { Success = false, message = "Forget Password link UnSuccessfully" });
             }
             catch (Exception e)
             {
-
-                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
+                _logger.LogError(e.ToString());
+                return this.BadRequest(new { Success = false, message = e.InnerException.Message });
             }
         }
         [Authorize]
@@ -102,13 +113,14 @@ namespace FundooNotes.Controllers
             {
                 var email = User.FindFirst(ClaimTypes.Email).Value.ToString();
                 var result = userBL.ResetPassword(email, password, confirmPassword);
-                return this.Ok(new { isSuccess = true, message = "Password Reset Successfully" });
+                _logger.LogInformation("reset successfull");
+                return this.Ok(new { Success = true, message = "Password Reset Successfully" });
 
             }
             catch (Exception e)
             {
-
-                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
+                _logger.LogError(e.ToString());
+                return this.BadRequest(new { Success = false, message = e.InnerException.Message });
             }
         }
     }

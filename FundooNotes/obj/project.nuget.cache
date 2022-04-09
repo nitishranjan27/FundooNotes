@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RKTN3rqqnxDl2xlPeyqILqYJP+/baOhHxOEeutQuWv2jYovJk3N4X14Pkj+E7K7AmdYLRiGN2p+Uv5MCU7VaqQ==",
+  "dgSpecHash": "CPUQZqpyuvU1//vXARSfsA78JMjZP+XVtbWMwzPqjI9/uqiJop3XjaFi5BDWtyUFyuMxqre+rWlXHsD3b2kMlA==",
   "success": true,
   "projectFilePath": "C:\\Users\\NITISH KUMAR\\source\\FundooNotes\\FundooNotes\\FundooNotes.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,9 @@
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\NITISH KUMAR\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
