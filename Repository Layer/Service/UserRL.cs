@@ -67,24 +67,7 @@ namespace Repository_Layer.Service
             decryptpwd = new String(decoded_char);
             return decryptpwd;
         }
-        //public string Login(UserLoginModel userLogin)
-        //{
-        //    try
-        //    {
-        //        var LoginResult = this.fundooContext.UserTable.Where(X => X.Email == userLogin.Email && X.Password == userLogin.Password).FirstOrDefault();
-        //        if (LoginResult != null)
-        //        {
-        //            return LoginResult.Email;
-        //        }
-        //        else
-        //            return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
+       
         public LoginResponse UserLogin(UserLoginModel userLog)
         {
             try

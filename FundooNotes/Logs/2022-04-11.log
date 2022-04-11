@@ -1,0 +1,20 @@
+2022-04-11 21:16:44.7275 INFO Application started. Press Ctrl+C to shut down.
+2022-04-11 21:16:45.6270 INFO Hosting environment: Development
+2022-04-11 21:16:45.6524 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-11 21:19:03.5054 INFO login successfull
+2022-04-11 21:59:29.4655 INFO Application started. Press Ctrl+C to shut down.
+2022-04-11 21:59:29.6970 INFO Hosting environment: Development
+2022-04-11 21:59:29.6970 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-11 22:00:17.3934 INFO login successfull
+2022-04-11 22:00:26.8290 ERROR login unsuccessfull
+2022-04-11 22:00:30.4339 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 61
+2022-04-11 22:01:34.0231 ERROR login unsuccessfull
+2022-04-11 22:01:34.0701 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 61
+2022-04-11 22:01:54.2582 ERROR login unsuccessfull
+2022-04-11 22:01:54.3188 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 61
+2022-04-11 22:01:59.9575 ERROR login unsuccessfull
+2022-04-11 22:02:00.0322 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 61

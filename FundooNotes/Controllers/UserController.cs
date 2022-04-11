@@ -1,5 +1,6 @@
 ﻿using Buisness_Layer.Interface;
 using Common_Layer.Models;
+using FundooNotes.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,34 +35,16 @@ namespace FundooNotes.Controllers
                 else
                 {
                     _logger.LogError("Register unsuccessfull");
-                    return BadRequest(new { success = false, message = "Data Not Successful Uploaded", data = res });
+                    throw new AppException("Data Not Successful Uploaded");
                 }
             }
-            catch(Exception e)
+            catch(AppException e)
             {
                 _logger.LogError(e.ToString());
-                return this.BadRequest(new { isSuccess = false, message = e.InnerException.Message });
+                throw new AppException(e.Message);
             }
         }
-        //[HttpPost("Login")]
-        //public IActionResult LoginUser(UserLoginModel userLogin)
-        //{
-        //    try
-        //    {
-        //        var result = userBL.Login(userLogin);
-        //        if (result != null)
-        //        {
-        //            return this.Ok(new { success = true, message = "Login Successfully", data = result });
-        //        }
-        //        else
-        //            return this.BadRequest(new { success = false, message = "Login Unsuccessful" });
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
-
+        
         [HttpPost("Login")]
         public IActionResult UserLogin(UserLoginModel userLog)
         {
@@ -75,12 +58,12 @@ namespace FundooNotes.Controllers
                 }
                 else
                     _logger.LogError("login unsuccessfull");
-                    return this.BadRequest(new { Success = false, message = "Login Unsuccessful" });
+                    throw new AppException("Login Unsuccessful");
             }
-            catch (Exception ex)
+            catch (AppException ex)
             {
                 _logger.LogError(ex.ToString());
-                return this.BadRequest(new { Success = false, Message = ex.Message });
+                throw new AppException(ex.Message);
             }
         }
         [HttpPost("ForgotPassword")]
@@ -95,13 +78,13 @@ namespace FundooNotes.Controllers
                     return this.Ok(new { Success = true, message = "Forget Password link Send Successfully" });
                 }
                 else
-                    _logger.LogError("forget successfull");
-                    return this.BadRequest(new { Success = false, message = "Forget Password link UnSuccessfully" });
+                    _logger.LogError("forget Unsuccessfull");
+                    throw new AppException("Forget Password link UnSuccessfully");
             }
-            catch (Exception e)
+            catch (AppException e)
             {
                 _logger.LogError(e.ToString());
-                return this.BadRequest(new { Success = false, message = e.InnerException.Message });
+                throw new AppException(e.Message);
             }
         }
         [Authorize]
@@ -117,10 +100,10 @@ namespace FundooNotes.Controllers
                 return this.Ok(new { Success = true, message = "Password Reset Successfully" });
 
             }
-            catch (Exception e)
+            catch (AppException e)
             {
                 _logger.LogError(e.ToString());
-                return this.BadRequest(new { Success = false, message = e.InnerException.Message });
+                throw new AppException(e.Message);
             }
         }
     }
