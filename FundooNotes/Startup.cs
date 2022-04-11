@@ -1,5 +1,6 @@
 using Buisness_Layer.Interface;
 using Buisness_Layer.Service;
+using FundooNotes.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -131,6 +132,9 @@ namespace FundooNotes
             app.UseAuthentication();
 
             app.UseAuthorization();
+           
+            // global error handler
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
