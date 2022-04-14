@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Common_Layer.Models
 {
+    /// <summary>
+    /// Model class for registering all the details required to (sign up)
+    /// </summary>
     public class UserReg
     {
         [Required]

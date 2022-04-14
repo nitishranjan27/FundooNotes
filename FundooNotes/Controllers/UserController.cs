@@ -10,17 +10,33 @@ using System.Security.Claims;
 
 namespace FundooNotes.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    /// <summary>
+    ///  UserController class
+    /// </summary>
+    [Route("api/[controller]")] // Route is for matching incoming HTTP requests.
+    [ApiController] // To Enable Routing Requirements.
     public class UserController : ControllerBase
     {
+        // can only be assigned a value from within the constructor(s) of a class.
         private readonly IUserBL userBL;
         private readonly ILogger<UserController> _logger;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// </summary>
+        /// <param name="userBL">userBL parameter</param>
+        /// <param name="logger">Logger</param>
         public UserController(IUserBL userBL, ILogger<UserController> logger)
         {
             this.userBL = userBL;
             this._logger = logger;
         }
+
+        /// <summary>
+        ///  API for Register a User
+        /// </summary>
+        /// <param name="userReg">userReg parameter</param>
+        /// <returns>returns registered user</returns>
+        /// <exception cref="AppException"></exception>
         [HttpPost("Register")]
         public IActionResult Post(UserReg userReg)
         {
@@ -44,7 +60,13 @@ namespace FundooNotes.Controllers
                 throw new AppException(e.Message);
             }
         }
-        
+
+        /// <summary>
+        /// API for Get all Login Data
+        /// </summary>
+        /// <param name="userLog">userLog parameter</param>
+        /// <returns>returns login data</returns>
+        /// <exception cref="AppException"></exception>
         [HttpPost("Login")]
         public IActionResult UserLogin(UserLoginModel userLog)
         {
@@ -66,6 +88,13 @@ namespace FundooNotes.Controllers
                 throw new AppException(ex.Message);
             }
         }
+
+        /// <summary>
+        /// API for Forget Password
+        /// </summary>
+        /// <param name="email">email parameter</param>
+        /// <returns>returns a token</returns>
+        /// <exception cref="AppException"></exception>
         [HttpPost("ForgotPassword")]
         public IActionResult ForgotPassword(string email)
         {
@@ -87,6 +116,14 @@ namespace FundooNotes.Controllers
                 throw new AppException(e.Message);
             }
         }
+
+        /// <summary>
+        /// API for Reset Password
+        /// </summary>
+        /// <param name="password">password parameter</param>
+        /// <param name="confirmPassword">confirmPassword parameter</param>
+        /// <returns>returns updated password</returns>
+        /// <exception cref="AppException"></exception>
         [Authorize]
         [HttpPost("ResetPassword")]
 

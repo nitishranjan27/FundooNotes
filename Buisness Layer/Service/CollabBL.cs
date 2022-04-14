@@ -11,6 +11,11 @@ namespace Buisness_Layer.Service
     public class CollabBL : ICollabBL
     {
         private readonly ICollabRL collabRL;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="collabRL">collabRL Parameter</param>
         public CollabBL(ICollabRL collabRL)
         {
             this.collabRL = collabRL;

@@ -18,9 +18,12 @@ using System.Threading.Tasks;
 
 namespace FundooNotes.Controllers
 {
+    /// <summary>
+    /// NotesController Class for creating API
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize]           // user to grant and restrict permissions on Web pages.
     public class NotesController : ControllerBase
     {
         private readonly INoteBL notesBL;
@@ -28,6 +31,13 @@ namespace FundooNotes.Controllers
         private readonly IDistributedCache distributedCache;
         private readonly ILogger<UserController> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotesController"/> class.
+        /// </summary>
+        /// <param name="notesBL">noteBL parameter</param>
+        /// <param name="fundooContext">fundooContext parameter</param>
+        /// <param name="distributedCache">distributedCache parameter</param>
+        /// <param name="logger">Logger</param>
         public NotesController(INoteBL notesBL, FundooContext fundooContext, IDistributedCache distributedCache, ILogger<UserController> logger)
         {
             this.notesBL = notesBL;
@@ -35,6 +45,12 @@ namespace FundooNotes.Controllers
             this.distributedCache = distributedCache;
             this._logger = logger;
         }
+
+        /// <summary>
+        /// API for creating a new note
+        /// </summary>
+        /// <param name="noteModel">noteModel parameter</param>
+        /// <returns>return a note</returns>
         [HttpPost("Create")]
         public IActionResult CreateNote(NoteModel noteModel)
         {
@@ -59,6 +75,13 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
+
+        /// <summary>
+        /// API for update note using NoteId
+        /// </summary>
+        /// <param name="noteUpdateModel">noteUpdateModel parameter</param>
+        /// <param name="NoteId">NoteId parameter</param>
+        /// <returns>return a updated note</returns>
         [HttpPut("Update")]
         public IActionResult UpdateNote(NoteModel noteUpdateModel, long NoteId)
         {
@@ -83,7 +106,12 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
-        
+
+        /// <summary>
+        /// API for deleting a note using NoteId
+        /// </summary>
+        /// <param name="NoteId">NoteId parameter</param>
+        /// <returns>delete a note</returns>
         [HttpDelete("Delete")]
         public IActionResult DeleteNotes(long NoteId)
         {
@@ -109,6 +137,11 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for getting all Notes of all users
+        /// </summary>
+        /// <param name="userId">userId parameter</param>
+        /// <returns>returns all notes of every use</returns>
         [HttpGet("GetAll")]
         public IActionResult GetAllNotes(long userId)
         {
@@ -134,6 +167,10 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for getting all notes using redis cache
+        /// </summary>
+        /// <returns>returns all notes of all users</returns>
         [HttpGet("Redis")]
         public async Task<IActionResult> GetAllNotesUsingRedisCache()
         {
@@ -160,6 +197,11 @@ namespace FundooNotes.Controllers
             return this.Ok(notesList);
         }
 
+        /// <summary>
+        /// API for getting a particular note using NoteId
+        /// </summary>
+        /// <param name="NotesId">NotesId parameter</param>
+        /// <returns>returns a note using NotesId</returns>
         [HttpGet("Get/{NotesId}")]
         public IActionResult GetNote(int NotesId)
         {
@@ -185,6 +227,11 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for Archive a note
+        /// </summary>
+        /// <param name="NoteId">NoteId parameter</param>
+        /// <returns>Archive a note</returns>
         [HttpPut("IsArchive")]
         public IActionResult ArchiveNote(long NoteId)
         {
@@ -210,6 +257,11 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for pin a note
+        /// </summary>
+        /// <param name="NoteId">NoteId parameter</param>
+        /// <returns>pin a note</returns>
         [HttpPut("IsPinned")]
         public IActionResult PinnedNote(long NoteId)
         {
@@ -234,6 +286,12 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, message = ex.InnerException.Message });
             }
         }
+
+        /// <summary>
+        /// API for put a note into trash
+        /// </summary>
+        /// <param name="NotesId">NotesId parameter</param>
+        /// <returns>put a note into trash and remove from trash</returns>
         [HttpPut("IsTrash")]
         public IActionResult TrashedNote(long NotesId)
         {
@@ -259,6 +317,12 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for adding a color
+        /// </summary>
+        /// <param name="NoteId">NoteId parameter</param>
+        /// <param name="addcolor">add color parameter</param>
+        /// <returns>Add a color</returns>
         [HttpPut("Color")]
         public IActionResult NoteColor(long NoteId, string addcolor)
         {
@@ -284,6 +348,12 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for add Image into a note
+        /// </summary>
+        /// <param name="noteid">noteid parameter</param>
+        /// <param name="imageURL">imageURL parameter</param>
+        /// <returns>Add image</returns>
         [HttpPut("UpdateImage/{noteid}")]
         public IActionResult UploadImage(long noteid,IFormFile imageURL)
         {
@@ -310,6 +380,11 @@ namespace FundooNotes.Controllers
         }
 
 
+        /// <summary>
+        /// API for remove image from note
+        /// </summary>
+        /// <param name="noteid">noteid parameter</param>
+        /// <returns>Remove image</returns>
         [HttpDelete("DeleteImage/{noteid}")]
         public IActionResult DeleteImage(long noteid)
         {

@@ -16,6 +16,12 @@ namespace Repository_Layer.Service
         {
             this.fundooContext = fundooContext;
         }
+
+        /// <summary>
+        /// Created AddLabel Method
+        /// </summary>
+        /// <param name="labelModel">labelModel Parameter</param>
+        /// <returns></returns>
         public LabelEntity AddLabel(LabelModel labelModel)
         {
             try
@@ -45,6 +51,11 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method to get all Labels
+        /// </summary>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public IEnumerable<LabelEntity> GetAllLabels(long userId)
         {
             try
@@ -58,6 +69,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method to get labels by NotesId
+        /// </summary>
+        /// <param name="NotesId">NotesId Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public List<LabelEntity> Getlabel(long NotesId, long userId)
         {
             try
@@ -71,6 +88,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method to updateLabel by labelID
+        /// </summary>
+        /// <param name="labelModel">labelModel Parameter</param>
+        /// <param name="labelID">labelID Parameter</param>
+        /// <returns></returns>
         public LabelEntity UpdateLabel(LabelModel labelModel, long labelID)
         {
             try
@@ -94,6 +117,13 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+
+        /// <summary>
+        /// Method to DeleteLabel By LabelID
+        /// </summary>
+        /// <param name="labelID">labelID Paramete</param>
+        /// <param name="userId">userId Paramete</param>
+        /// <returns></returns>
         public LabelEntity DeleteLabel(long labelID, long userId)
         {
             try
