@@ -15,14 +15,23 @@ namespace Repository_Layer.Service
 {
     public class NoteRL : INoteRL
     {
-        public readonly FundooContext fundooContext;
-        public readonly IConfiguration appsettings;
+        /// <summary>
+        /// Defining Variables
+        /// </summary>
+        public readonly FundooContext fundooContext; //context class is used to query or save data to the database.
+        public readonly IConfiguration appsettings;  //IConfiguration interface is used to read Settings and Connection Strings from AppSettings.
         public NoteRL(FundooContext fundooContext, IConfiguration Appsettings)
         {
             this.fundooContext = fundooContext;
             this.appsettings = Appsettings;
         }
 
+        /// <summary>
+        /// Adding Archive Method
+        /// </summary>
+        /// <param name="NoteId">NoteId Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public NoteEntity ArchiveNote(long NoteId, long userId)
         {
             try
@@ -52,6 +61,13 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Creating a CreateNote Method
+        /// </summary>
+        /// <param name="noteModel">noteModel Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public NoteEntity CreateNote(NoteModel noteModel, long userId)
         {
             try
@@ -88,6 +104,11 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Delete Method for deleting NoteId
+        /// </summary>
+        /// <param name="NoteId">NoteId Parameter</param>
+        /// <returns></returns>
         public NoteEntity DeleteNotes(long NoteId)
         {
             try
@@ -111,6 +132,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Show all notes of all users
+        /// </summary>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public IEnumerable<NoteEntity> GetAllNotes(long userId)
         {
             try
@@ -124,6 +151,11 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Show note for particular user
+        /// </summary>
+        /// <param name="NotesId">NotesId Parameter</param>
+        /// <returns></returns>
         public List<NoteEntity> GetNote(int NotesId)
         {
             try
@@ -141,6 +173,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Adding Note Color
+        /// </summary>
+        /// <param name="NoteId">NotesId Parameter</param>
+        /// <param name="addcolor">addcolor Parameter</param>
+        /// <returns></returns>
         public NoteEntity NoteColor(long NoteId, string addcolor)
         {
             var note = fundooContext.NotesTable.Where(c => c.NoteId == NoteId).FirstOrDefault();
@@ -164,6 +202,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Adding pin for Note
+        /// </summary>
+        /// <param name="NoteId">NotesId Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public NoteEntity PinnedNote(long NoteId, long userId)
         {
             var pin = fundooContext.NotesTable.Where(p => p.NoteId == NoteId && p.Id == userId).FirstOrDefault();
@@ -186,6 +230,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Adding Trash for Note
+        /// </summary>
+        /// <param name="NotesId">NotesId Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public NoteEntity TrashedNote(long NotesId, long userId)
         {
             var trashed = fundooContext.NotesTable.Where(t => t.NoteId == NotesId && t.Id == userId).FirstOrDefault();
@@ -209,6 +259,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Updating Note
+        /// </summary>
+        /// <param name="noteUpdateModel">noteUpdateModel Parameter</param>
+        /// <param name="NoteId">NotesId Parameter</param>
+        /// <returns></returns>
         public NoteEntity UpdateNote(NoteModel noteUpdateModel, long NoteId)
         {
             try
@@ -236,6 +292,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Add Image in Note
+        /// </summary>
+        /// <param name="imageURL">imageURL Parameter</param>
+        /// <param name="noteid">noteid Parameter</param>
+        /// <returns></returns>
         public NoteEntity UploadImage(IFormFile imageURL, long noteid)
         {
             try
@@ -277,6 +339,12 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+        /// <summary>
+        /// Deleting the Image
+        /// </summary>
+        /// <param name="noteid">noteid Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public NoteEntity DeleteImage(long noteid, long userId)
         {
             try

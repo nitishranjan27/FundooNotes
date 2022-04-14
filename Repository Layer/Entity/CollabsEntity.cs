@@ -7,6 +7,9 @@ using System.Text.Json.Serialization;
 
 namespace Repository_Layer.Entity
 {
+    /// <summary>
+    /// Collaborator Entity Class
+    /// </summary>
     public class CollabsEntity
     {
         [Key]

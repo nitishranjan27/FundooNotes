@@ -15,13 +15,18 @@ namespace Repository_Layer.Service
 {
     public class UserRL : IUserRL
     {
-        private readonly FundooContext fundooContext;
-        private readonly IConfiguration appsettings;
+        private readonly FundooContext fundooContext;  //context class is used to query or save data to the database.
+        private readonly IConfiguration appsettings;   //IConfiguration interface is used to read Settings and Connection Strings from AppSettings.
         public UserRL(FundooContext fundooContext, IConfiguration Appsettings)
         {
             this.fundooContext = fundooContext;
             this.appsettings = Appsettings;
         }
+        /// <summary>
+        /// User Registration
+        /// </summary>
+        /// <param name="userRegModel">userRegModel Parameter</param>
+        /// <returns></returns>
         public UserEntity Registration(UserReg userRegModel)
         {
             try
@@ -47,6 +52,11 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method for EncryptPassword
+        /// </summary>
+        /// <param name="password">password Parameter</param>
+        /// <returns></returns>
         private string EncryptPassword(string password)
         {
             string enteredpassword = "";
@@ -55,6 +65,11 @@ namespace Repository_Layer.Service
             enteredpassword = Convert.ToBase64String(hide);
             return enteredpassword;
         }
+        /// <summary>
+        /// Method for DecryptPassword
+        /// </summary>
+        /// <param name="encryptpwd">encryptpwd Parameter</param>
+        /// <returns></returns>
         private string DecryptPassword(string encryptpwd)
         {
             string decryptpwd = string.Empty;
@@ -67,7 +82,12 @@ namespace Repository_Layer.Service
             decryptpwd = new String(decoded_char);
             return decryptpwd;
         }
-       
+
+        /// <summary>
+        /// Show All Registerd Login Data
+        /// </summary>
+        /// <param name="userLog">userLog Parameter</param>
+        /// <returns></returns>
         public LoginResponse UserLogin(UserLoginModel userLog)
         {
             try
@@ -98,6 +118,13 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+
+        /// <summary>
+        /// Method for Generating Security Token
+        /// </summary>
+        /// <param name="Email">Email Parameter</param>
+        /// <param name="Id">Id Parameter</param>
+        /// <returns></returns>
         private string GenerateSecurityToken(string Email, long Id)
         {
             try
@@ -120,6 +147,11 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+        /// <summary>
+        /// Method for forget password
+        /// </summary>
+        /// <param name="email">email Parameter</param>
+        /// <returns></returns>
         public string ForgetPassword(string email)
         {
             try
@@ -140,6 +172,13 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+        /// <summary>
+        /// Method for Reset password
+        /// </summary>
+        /// <param name="email">email parameter</param>
+        /// <param name="password">password parameter</param>
+        /// <param name="confirmPassword">confirmPassword parameter</param>
+        /// <returns></returns>
         public bool ResetPassword(string email, string password, string confirmPassword)
         {
             try

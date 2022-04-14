@@ -11,7 +11,16 @@ namespace Buisness_Layer.Service
 {
     public class NoteBL : INoteBL
     {
+
+        /// <summary>
+        /// Variable
+        /// </summary>
         private readonly INoteRL noteRL;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="noteRL">noteRL Parameter</param>
         public NoteBL(INoteRL noteRL)
         {
             this.noteRL = noteRL;
@@ -29,6 +38,12 @@ namespace Buisness_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Adding a new Note Method
+        /// </summary>
+        /// <param name="noteModel">noteModel Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public NoteEntity CreateNote(NoteModel noteModel, long userId)
         {
             try

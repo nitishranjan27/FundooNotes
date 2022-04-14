@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Common_Layer.Models
 {
+    /// <summary>
+    /// model class for getting all the data when we enter (Email and Password )
+    /// </summary>
     public class LoginResponse
     {
         //public long Id { get; set; }

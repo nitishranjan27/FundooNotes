@@ -18,9 +18,12 @@ using System.Threading.Tasks;
 
 namespace FundooNotes.Controllers
 {
+    /// <summary>
+    /// LabelsController connected with BaseController
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize] // user to grant and restrict permissions on Web pages.
     public class LabelsController : ControllerBase
     {
         private readonly ILabelBL labelBL;
@@ -28,6 +31,13 @@ namespace FundooNotes.Controllers
         private readonly IDistributedCache distributedCache;
         private readonly ILogger<UserController> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelsController"/> class.
+        /// </summary>
+        /// <param name="labelBL">labelBL parameter</param>
+        /// <param name="fundooContext">fundooContext parameter</param>
+        /// <param name="distributedCache">distributedCache parameter</param>
+        /// <param name="logger">Logger</param>
         public LabelsController(ILabelBL labelBL, FundooContext fundooContext, IDistributedCache distributedCache, ILogger<UserController> logger)
         {
             this.labelBL = labelBL;
@@ -36,6 +46,11 @@ namespace FundooNotes.Controllers
             this._logger = logger;
         }
 
+        /// <summary>
+        /// API for adding a new label
+        /// </summary>
+        /// <param name="labelModel">labelModel parameter</param>
+        /// <returns>returns a new label</returns>
         [HttpPost("Create")]
         public IActionResult AddLabel(LabelModel labelModel) 
         {
@@ -71,6 +86,11 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for getting all labels
+        /// </summary>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns>returns all labels</returns>
         [HttpGet("GetAll")]
         public IActionResult GetAllLabels(long userId)
         {
@@ -95,6 +115,10 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for Getting all notes using redis cache
+        /// </summary>
+        /// <returns>returns all notes</returns>
         [HttpGet("Redis")]
         public async Task<IActionResult> GetAllNotesUsingRedisCache()
         {
@@ -121,6 +145,11 @@ namespace FundooNotes.Controllers
             return this.Ok(labelsList); 
         }
 
+        /// <summary>
+        /// API for Get Labels by noteId
+        /// </summary>
+        /// <param name="NotesId">NotesId parameter</param>
+        /// <returns>returns all labels using notesId</returns>
         [HttpGet("Get/{NotesId}")]
         public IActionResult Getlabel(long NotesId)
         {
@@ -146,6 +175,12 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for update a label by labelId
+        /// </summary>
+        /// <param name="labelModel">labelModel parameter</param>
+        /// <param name="labelID">labelID parameter</param>
+        /// <returns>returns for updated labels</returns>
         [HttpPut("Update")]
         public IActionResult UpdateLabel(LabelModel labelModel, long labelID)
         {
@@ -171,6 +206,11 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for delete a label by labelID
+        /// </summary>
+        /// <param name="labelID">labelID parameter</param>
+        /// <returns>Delete a label</returns>
         [HttpDelete("Delete")]
         public IActionResult DeleteLabel(long labelID)
         {

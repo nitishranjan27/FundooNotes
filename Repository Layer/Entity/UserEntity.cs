@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Repository_Layer.Entity
 {
+    /// <summary>
+    /// User Entity Class
+    /// </summary>
     public class UserEntity
     {
         [Key]

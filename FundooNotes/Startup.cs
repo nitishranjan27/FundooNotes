@@ -24,15 +24,31 @@ using System.Threading.Tasks;
 
 namespace FundooNotes
 {
+    /// <summary>
+    /// Startup Class
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">configuration parameter</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Gets properties for configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
+
+        /// <summary>
+        /// ConfigureServices Method 
+        /// </summary>
+        /// <param name="services">services parameter</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FundooContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:FundooDB"]));
@@ -112,6 +128,14 @@ namespace FundooNotes
             });
 
         }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
+        /// <summary>
+        /// Configure Method for configure the HTTP request pipeline
+        /// </summary>
+        /// <param name="app">app parameter</param>
+        /// <param name="env">env parameter</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwagger();

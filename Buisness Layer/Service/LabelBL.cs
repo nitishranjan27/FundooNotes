@@ -11,6 +11,10 @@ namespace Buisness_Layer.Service
     public class LabelBL : ILabelBL
     {
         private readonly ILabelRL labelRL;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="labelRL">labelRL Parameter</param>
         public LabelBL(ILabelRL labelRL)
         {
             this.labelRL = labelRL;

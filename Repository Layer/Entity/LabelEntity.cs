@@ -7,6 +7,9 @@ using System.Text.Json.Serialization;
 
 namespace Repository_Layer.Entity
 {
+    /// <summary>
+    /// Label Entity Class
+    /// </summary>
     public class LabelEntity
     {
         [Key]

@@ -20,13 +20,21 @@ namespace FundooNotes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize] //user to grant and restrict permissions on Web pages.
     public class CollabsController : ControllerBase
     {
         private readonly ICollabBL collabBL;
         private readonly FundooContext fundooContext;
         private readonly IDistributedCache distributedCache;
         private readonly ILogger<UserController> _logger;
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollabsController"/> class.
+        /// </summary>
+        /// <param name="collabBL">collabBL parameter</param>
+        /// <param name="fundooContext">fundooContext parameter</param>
+        /// <param name="distributedCache">distributedCache parameter</param>
+        /// <param name="logger">Logger</param>
         public CollabsController(ICollabBL collabBL, FundooContext fundooContext, IDistributedCache distributedCache, ILogger<UserController> logger)
         {
             this.collabBL = collabBL;
@@ -34,6 +42,12 @@ namespace FundooNotes.Controllers
             this.distributedCache = distributedCache;
             this._logger = logger;
         }
+
+        /// <summary>
+        /// API for add collaborator
+        /// </summary>
+        /// <param name="collabModel">collabModel parameter</param>
+        /// <returns>returns a new collaborator</returns>
         [HttpPost("Add")]
         public IActionResult AddCollab(CollabModel collabModel)
         {
@@ -67,6 +81,12 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
+
+        /// <summary>
+        /// API for remove a collaborator from collaboration using collabID
+        /// </summary>
+        /// <param name="collabID">collabID parameter</param>
+        /// <returns>remove member from collaboration</returns>
         [HttpDelete("Remove")]
         public IActionResult RemoveCollabs(long collabID)
         {
@@ -91,6 +111,12 @@ namespace FundooNotes.Controllers
                 return this.BadRequest(new { Success = false, Message = e.Message, InnerException = e.InnerException });
             }
         }
+
+        /// <summary>
+        /// API for getting all collaborators
+        /// </summary>
+        /// <param name="noteId">noteId Parameter</param>
+        /// <returns>returns all the collaborators</returns>
         [HttpGet("GetAll")]
         public IActionResult GetAllCollabs(long noteId)
         {
@@ -117,6 +143,10 @@ namespace FundooNotes.Controllers
             }
         }
 
+        /// <summary>
+        /// API for get all collaborator using redis cache
+        /// </summary>
+        /// <returns>returns all the collaborators</returns>
         [HttpGet("Redis")]
         public async Task<IActionResult> GetAllCollaboratorUsingRedisCache()
         {

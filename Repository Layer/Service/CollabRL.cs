@@ -11,12 +11,18 @@ namespace Repository_Layer.Service
 {
     public class CollabRL : ICollabRL
     {
-        public readonly FundooContext fundooContext; 
+        public readonly FundooContext fundooContext;   //context class is used to query or save data to the database.
 
         public CollabRL(FundooContext fundooContext)
         {
             this.fundooContext = fundooContext;
         }
+
+        /// <summary>
+        /// Method for adding Members to collaboration
+        /// </summary>
+        /// <param name="collabModel">collabModel Parameter</param>
+        /// <returns></returns>
         public CollabsEntity AddCollab(CollabModel collabModel)
         {
             try
@@ -31,7 +37,9 @@ namespace Repository_Layer.Service
                         NoteId = collabModel.NoteId,
                         Id = userData.Id
                     };
+                    //Adding the data to database
                     fundooContext.CollaboratorTable.Add(collabsEntity);
+                    //Save the changes in database
                     var result = fundooContext.SaveChanges();
                     return collabsEntity;
                 }
@@ -46,6 +54,13 @@ namespace Repository_Layer.Service
                 throw;
             }
         }
+
+        /// <summary>
+        /// Method for Remove member from collaboration
+        /// </summary>
+        /// <param name="collabID">collabID Parameter</param>
+        /// <param name="userId">userId Parameter</param>
+        /// <returns></returns>
         public string RemoveCollabs(long collabID, long userId)
         {
             var collab = fundooContext.CollaboratorTable.Where(X => X.CollabsID == collabID).FirstOrDefault();
@@ -61,6 +76,12 @@ namespace Repository_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method for getting all collaborator
+        /// </summary>
+        /// <param name="noteId">noteId Paramete</param>
+        /// <param name="userId">userId Paramete</param>
+        /// <returns></returns>
         public IEnumerable<CollabsEntity> GetAllCollabs(long noteId, long userId)
         {
             try

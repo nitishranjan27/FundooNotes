@@ -11,11 +11,20 @@ namespace Buisness_Layer.Service
     public class UserBL : IUserBL
     {
         private readonly IUserRL userRL;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="userRL">userRL Parameter</param>
         public UserBL(IUserRL userRL)
         {
             this.userRL = userRL;
         }
 
+        /// <summary>
+        ///  Method for Forget Password in UserBL class
+        /// </summary>
+        /// <param name="email">email Parameter</param>
+        /// <returns></returns>
         public string ForgetPassword(string email)
         {
             try
@@ -28,6 +37,13 @@ namespace Buisness_Layer.Service
                 throw;
             }
         }
+        /// <summary>
+        /// Method for Reset Password in UserBL class
+        /// </summary>
+        /// <param name="email">email Parameter</param>
+        /// <param name="password">password Parameter</param>
+        /// <param name="confirmPassword">confirmPassword Parameter</param>
+        /// <returns></returns>
         public bool ResetPassword(string email, string password, string confirmPassword)
         {
             try
@@ -41,6 +57,11 @@ namespace Buisness_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method for Registration in UserBL class
+        /// </summary>
+        /// <param name="userRegModel">userRegModel Parameter</param>
+        /// <returns></returns>
         public UserEntity Registration(UserReg userRegModel)
         {
             try
@@ -53,6 +74,11 @@ namespace Buisness_Layer.Service
             }
         }
 
+        /// <summary>
+        /// Method for Login in UserBL class
+        /// </summary>
+        /// <param name="userLog">userLog Parameter</param>
+        /// <returns></returns>
         public LoginResponse UserLogin(UserLoginModel userLog)
         {
             try
