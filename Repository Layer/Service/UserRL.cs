@@ -138,7 +138,7 @@ namespace Repository_Layer.Service
                 var token = new JwtSecurityToken(appsettings["Jwt:Issuer"],
                   appsettings["Jwt:Audience"],
                   claims,
-                  expires: DateTime.Now.AddMinutes(60),
+                  expires: DateTime.Now.AddHours(24),
                   signingCredentials: credentials);
                 return new JwtSecurityTokenHandler().WriteToken(token);
             }
@@ -179,14 +179,15 @@ namespace Repository_Layer.Service
         /// <param name="password">password parameter</param>
         /// <param name="confirmPassword">confirmPassword parameter</param>
         /// <returns></returns>
-        public bool ResetPassword(string email, string password, string confirmPassword)
+        public bool ResetPassword(string email,ResetPassword resetPassword)
         {
+
             try
             {
-                if (password.Equals(confirmPassword))
+                if (resetPassword.password == resetPassword.confirmPassword)
                 {
                     UserEntity user = fundooContext.UserTable.Where(e => e.Email == email).FirstOrDefault();
-                    user.Password = EncryptPassword(confirmPassword);
+                    user.Password = EncryptPassword(resetPassword.confirmPassword);
                     fundooContext.SaveChanges();
                     return true;
                 }

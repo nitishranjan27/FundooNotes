@@ -74,6 +74,16 @@ namespace FundooNotes
             services.AddMemoryCache();
 
             services.AddControllers();
+            //policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                name: "AllowOrigin",
+              builder => {
+                  builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+              });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Welcome to FundooNotes" });
@@ -138,6 +148,7 @@ namespace FundooNotes
         /// <param name="env">env parameter</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("AllowOrigin");
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -159,6 +170,7 @@ namespace FundooNotes
            
             // global error handler
             app.UseMiddleware<ErrorHandlerMiddleware>();
+            
 
             app.UseEndpoints(endpoints =>
             {

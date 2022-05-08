@@ -25,6 +25,6 @@ namespace Common_Layer.Models
         [Required]
         [RegularExpression(@"^[A-Z]{1}[A-Z a-z]{3,}[!*@#$%^&+=]?[0-9]{1,}$")]
         public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
+        public string confirmPassword { get; set; }
     }
 }

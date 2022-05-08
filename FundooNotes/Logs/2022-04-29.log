@@ -1,0 +1,58 @@
+2022-04-29 07:07:10.0051 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 07:07:10.2000 INFO Hosting environment: Development
+2022-04-29 07:07:10.2193 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 08:19:58.8551 INFO Register successfull
+2022-04-29 12:07:14.5930 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 12:07:14.7161 INFO Hosting environment: Development
+2022-04-29 12:07:14.7332 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 12:49:40.6845 INFO login successfull
+2022-04-29 12:49:52.5842 INFO login successfull
+2022-04-29 12:50:39.6181 ERROR login unsuccessfull
+2022-04-29 12:50:40.8951 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 83
+2022-04-29 12:50:59.1020 INFO login successfull
+2022-04-29 12:53:48.6942 INFO login successfull
+2022-04-29 12:53:57.1233 ERROR login unsuccessfull
+2022-04-29 12:53:57.3107 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 83
+2022-04-29 12:54:55.7433 INFO login successfull
+2022-04-29 12:55:12.0933 ERROR login unsuccessfull
+2022-04-29 12:55:12.2356 ERROR FundooNotes.Helpers.AppException: Login Unsuccessful
+   at FundooNotes.Controllers.UserController.UserLogin(UserLoginModel userLog) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 83
+2022-04-29 12:55:59.7158 INFO login successfull
+2022-04-29 13:18:06.0764 ERROR forget Unsuccessfull
+2022-04-29 13:18:06.2667 ERROR FundooNotes.Helpers.AppException: Forget Password link UnSuccessfully
+   at FundooNotes.Controllers.UserController.ForgotPassword(String email) in C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\Controllers\UserController.cs:line 111
+2022-04-29 13:33:32.2637 INFO forget successfull
+2022-04-29 13:42:11.0555 INFO Register successfull
+2022-04-29 13:42:57.6407 INFO login successfull
+2022-04-29 13:43:10.4565 INFO login successfull
+2022-04-29 13:43:29.9531 INFO forget successfull
+2022-04-29 14:03:12.3234 INFO forget successfull
+2022-04-29 14:14:49.0936 INFO reset successfull
+2022-04-29 15:47:59.5482 INFO forget successfull
+2022-04-29 15:49:02.1165 INFO forget successfull
+2022-04-29 15:55:29.0809 INFO Register successfull
+2022-04-29 15:56:05.7068 INFO login successfull
+2022-04-29 15:56:45.7226 INFO login successfull
+2022-04-29 15:58:28.5704 INFO login successfull
+2022-04-29 15:59:31.6070 INFO login successfull
+2022-04-29 16:50:45.4514 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 16:50:46.2726 INFO Hosting environment: Development
+2022-04-29 16:50:46.6407 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 16:51:43.8351 INFO forget successfull
+2022-04-29 16:57:45.4271 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 16:57:48.1234 INFO Hosting environment: Development
+2022-04-29 16:57:49.1775 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 16:59:18.7814 INFO forget successfull
+2022-04-29 17:08:02.6302 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 17:08:03.7831 INFO Hosting environment: Development
+2022-04-29 17:08:04.1495 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 17:13:40.8906 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 17:13:41.3969 INFO Hosting environment: Development
+2022-04-29 17:13:41.4756 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 17:14:46.6228 INFO forget successfull
+2022-04-29 22:29:57.7487 INFO Application started. Press Ctrl+C to shut down.
+2022-04-29 22:29:58.1666 INFO Hosting environment: Development
+2022-04-29 22:29:58.1814 INFO Content root path: C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes
+2022-04-29 22:30:27.5226 INFO forget successfull

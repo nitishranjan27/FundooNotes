@@ -44,11 +44,11 @@ namespace Buisness_Layer.Service
         /// <param name="password">password Parameter</param>
         /// <param name="confirmPassword">confirmPassword Parameter</param>
         /// <returns></returns>
-        public bool ResetPassword(string email, string password, string confirmPassword)
+        public bool ResetPassword(string email, ResetPassword resetPassword)
         {
             try
             {
-                return this.userRL.ResetPassword(email, password, confirmPassword);
+                return this.userRL.ResetPassword(email, resetPassword);
             }
             catch (Exception)
             {
