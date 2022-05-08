@@ -13,7 +13,7 @@ namespace Repository_Layer.Context
     {
             public FundooContext(DbContextOptions options)
                 : base(options)
-            {
+            {  
             }
             public DbSet<UserEntity> UserTable { get; set; }
            public DbSet<NoteEntity> NotesTable { get; set; }

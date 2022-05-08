@@ -125,14 +125,15 @@ namespace FundooNotes.Controllers
         /// <returns>returns updated password</returns>
         /// <exception cref="AppException"></exception>
         [Authorize]
-        [HttpPost("ResetPassword")]
+        //[HttpPut("ResetPassword")]
+        [HttpPut("ResetPassword")]
 
-        public IActionResult ResetPassword(string password, string confirmPassword)
+        public IActionResult ResetPassword(ResetPassword resetPassword)
         {
             try
             {
                 var email = User.FindFirst(ClaimTypes.Email).Value.ToString();
-                var result = userBL.ResetPassword(email, password, confirmPassword);
+                var result = userBL.ResetPassword(email, resetPassword);
                 _logger.LogInformation("reset successfull");
                 return this.Ok(new { Success = true, message = "Password Reset Successfully" });
 

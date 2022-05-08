@@ -143,11 +143,12 @@ namespace FundooNotes.Controllers
         /// <param name="userId">userId parameter</param>
         /// <returns>returns all notes of every use</returns>
         [HttpGet("GetAll")]
-        public IActionResult GetAllNotes(long userId)
+        public IActionResult GetAllNotes()
         {
             try
             {
-                var notes = notesBL.GetAllNotes(userId);
+                long userid = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var notes = notesBL.GetAllNotes(userid);
                 if (notes != null)
                 {
                     _logger.LogInformation("All notes Showing Successfully");

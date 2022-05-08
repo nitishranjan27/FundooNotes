@@ -92,11 +92,12 @@ namespace FundooNotes.Controllers
         /// <param name="userId">userId Parameter</param>
         /// <returns>returns all labels</returns>
         [HttpGet("GetAll")]
-        public IActionResult GetAllLabels(long userId)
+        public IActionResult GetAllLabels()
         {
             try
             {
-                var labels = labelBL.GetAllLabels(userId);
+                long userid = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
+                var labels = labelBL.GetAllLabels(userid);
                 if (labels != null)
                 {
                     _logger.LogInformation(" All labels Showing Successfully");
