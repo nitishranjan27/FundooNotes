@@ -325,12 +325,12 @@ namespace FundooNotes.Controllers
         /// <param name="addcolor">add color parameter</param>
         /// <returns>Add a color</returns>
         [HttpPut("Color")]
-        public IActionResult NoteColor(long NoteId, string addcolor)
+        public IActionResult NoteColor(ColorModel colorModel)
         {
-            try
+            try 
             {
                 long userId = Convert.ToInt32(User.Claims.FirstOrDefault(X => X.Type == "Id").Value);
-                var color = notesBL.NoteColor(NoteId, addcolor);
+                var color = notesBL.NoteColor(colorModel.NoteId, colorModel.addcolor);
                 if (color != null)
                 {
                     _logger.LogInformation("Color Added Successfully");
