@@ -44,25 +44,34 @@ C:\Users\prati\source\repos\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runt
 C:\Users\prati\source\repos\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\prati\source\repos\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\prati\source\repos\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.exe
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.deps.json
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.runtimeconfig.json
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.runtimeconfig.dev.json
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Buisness Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Common Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Repository Layer.pdb
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Experimental.System.Messaging.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.StackExchangeRedis.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -70,36 +79,27 @@ C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Mic
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Extensions.WebEncoders.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Xamarin.Essentials.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
@@ -113,14 +113,10 @@ C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\run
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Buisness Layer.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Common Layer.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Repository Layer.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Buisness Layer.pdb
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Common Layer.pdb
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\Repository Layer.pdb
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.csproj.AssemblyReference.cache
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.AssemblyInfoInputs.cache
@@ -130,11 +126,15 @@ C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\Fun
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\staticwebassets\FundooNotes.StaticWebAssets.Manifest.cache
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.RazorTargetAssemblyInfo.cache
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.csproj.CopyComplete
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.dll
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.pdb
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.genruntimeconfig.cache
 C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.config
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
-C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.exe
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.deps.json
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.runtimeconfig.json
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.runtimeconfig.dev.json
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\bin\Debug\netcoreapp3.1\FundooNotes.dll
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.csproj.CopyComplete
+C:\Users\NITISH KUMAR\source\FundooNotes\FundooNotes\obj\Debug\netcoreapp3.1\FundooNotes.genruntimeconfig.cache
